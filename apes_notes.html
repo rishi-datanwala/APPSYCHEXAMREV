@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Psychology — Exam Cram Notes 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0f0f13;
+    --surface: #17171e;
+    --card: #1e1e28;
+    --border: rgba(255,255,255,0.08);
+    --text: #f0eee8;
+    --muted: #8b8a94;
+    --accent1: #7f6bff;
+    --accent2: #2ecfb3;
+    --accent3: #ff6b6b;
+    --accent4: #ffb347;
+    --accent5: #69d2e7;
+    --unit1: #7f6bff;
+    --unit2: #2ecfb3;
+    --unit3: #ff9f43;
+    --unit4: #ff6b6b;
+    --unit5: #a29bfe;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1030 0%, #0f1a20 50%, #1a0f20 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  .header p { color: var(--muted); font-size: 1rem; }
+  .header .tags { display: flex; gap: 8px; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .tag {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: flex;
+    gap: 6px;
+    padding: 1.5rem 2rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav a {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .nav a:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+  .content { max-width: 960px; margin: 0 auto; padding: 2rem; }
+
+  .unit-section { margin-bottom: 3.5rem; }
+  .unit-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid;
+  }
+  .unit-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .unit-title h2 { font-size: 1.4rem; font-weight: 700; }
+  .unit-title p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  .weight-badge {
+    margin-left: auto;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+  }
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h3 .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .card ul { list-style: none; }
+  .card ul li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.5;
+  }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li strong { color: var(--text); font-weight: 600; }
+
+  .highlight-box {
+    background: var(--card);
+    border-left: 3px solid;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.88rem;
+  }
+  .highlight-box .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .full-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.4rem;
+    margin-bottom: 16px;
+  }
+  .full-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .compare-cell {
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  .compare-cell .label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th {
+    background: rgba(255,255,255,0.06);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--muted); }
+  td strong { color: var(--text); }
+  tr:last-child td { border-bottom: none; }
+
+  .vocab-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px 3px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--text);
+  }
+
+  .key-tip {
+    background: rgba(255, 200, 70, 0.07);
+    border: 1px solid rgba(255, 200, 70, 0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-top: 12px;
+  }
+  .key-tip strong { color: var(--accent4); }
+
+  .section-divider {
+    text-align: center;
+    margin: 3rem 0 1.5rem;
+    position: relative;
+  }
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-divider span {
+    position: relative;
+    background: var(--bg);
+    padding: 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Unit-specific colors */
+  .u1 { --uc: var(--unit1); }
+  .u2 { --uc: var(--unit2); }
+  .u3 { --uc: var(--unit3); }
+  .u4 { --uc: var(--unit4); }
+  .u5 { --uc: var(--unit5); }
+
+  .unit-header { border-color: var(--uc); }
+  .unit-badge { background: color-mix(in srgb, var(--uc) 15%, transparent); color: var(--uc); }
+  .weight-badge { background: color-mix(in srgb, var(--uc) 15%, transparent); color: var(--uc); border: 1px solid color-mix(in srgb, var(--uc) 30%, transparent); }
+  .card h3 .dot { background: var(--uc); }
+
+  .frq-box {
+    background: rgba(127, 107, 255, 0.07);
+    border: 1px solid rgba(127, 107, 255, 0.25);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 2rem;
+  }
+  .frq-box h3 { color: var(--accent1); font-size: 1rem; margin-bottom: 0.75rem; }
+
+  .footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AP Psychology Cram Notes</h1>
+  <p>Everything you need to score a 3 or 4 — exam-focused, concept-dense</p>
+  <div class="tags">
+    <span class="tag" style="background:rgba(127,107,255,0.15);color:#a29bfe;border:1px solid rgba(127,107,255,0.3);">Unit 1: Bio Bases</span>
+    <span class="tag" style="background:rgba(46,207,179,0.12);color:#2ecfb3;border:1px solid rgba(46,207,179,0.25);">Unit 2: Cognition</span>
+    <span class="tag" style="background:rgba(255,159,67,0.12);color:#ffb347;border:1px solid rgba(255,159,67,0.25);">Unit 3: Dev & Learning</span>
+    <span class="tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;border:1px solid rgba(255,107,107,0.25);">Unit 4: Social & Personality</span>
+    <span class="tag" style="background:rgba(162,155,254,0.12);color:#a29bfe;border:1px solid rgba(162,155,254,0.25);">Unit 5: Mental Health</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="#unit1">Unit 1 — Bio Bases</a>
+  <a href="#unit2">Unit 2 — Cognition</a>
+  <a href="#unit3">Unit 3 — Dev & Learning</a>
+  <a href="#unit4">Unit 4 — Social & Personality</a>
+  <a href="#unit5">Unit 5 — Mental Health</a>
+  <a href="#frq">FRQ Tips</a>
+</nav>
+
+<div class="content">
+
+<!-- ===== UNIT 1 ===== -->
+<div id="unit1" class="unit-section u1">
+  <div class="unit-header">
+    <div class="unit-badge">1</div>
+    <div class="unit-title">
+      <h2>Biological Bases of Behavior</h2>
+      <p>Neurons, brain, nervous system, sensation, sleep</p>
+    </div>
+    <div class="weight-badge">~14–17% of exam</div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3><span class="dot"></span>Neuron Anatomy & Firing</h3>
+      <ul>
+        <li><strong>Dendrites</strong> — receive signals from other neurons</li>
+        <li><strong>Axon</strong> — carries signal away from cell body</li>
+        <li><strong>Myelin sheath</strong> — speeds up signal transmission</li>
+        <li><strong>Axon terminals</strong> — release neurotransmitters into synapse</li>
+        <li><strong>Resting potential</strong> — neuron is negatively charged inside (−70mV)</li>
+        <li><strong>Action potential</strong> — electrical charge travels down axon when threshold is met</li>
+        <li><strong>All-or-nothing law</strong> — neuron fires completely or not at all</li>
+        <li><strong>Refractory period</strong> — brief recovery; neuron can't fire again immediately</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Key Neurotransmitters</h3>
+      <ul>
+        <li><strong>Dopamine</strong> — reward, motivation, movement (low → Parkinson's; high → schizophrenia)</li>
+        <li><strong>Serotonin</strong> — mood, sleep, appetite (low → depression)</li>
+        <li><strong>Norepinephrine</strong> — arousal, alertness, fight-or-flight</li>
+        <li><strong>GABA</strong> — main inhibitory NT; calms neural activity</li>
+        <li><strong>Glutamate</strong> — main excitatory NT; learning & memory</li>
+        <li><strong>Acetylcholine (ACh)</strong> — muscle movement, memory (low → Alzheimer's)</li>
+        <li><strong>Endorphins</strong> — pain relief, pleasure (natural opiates)</li>
+      </ul>
+      <div class="key-tip"><strong>Tip:</strong> Agonists mimic or enhance NT action. Antagonists block NT receptors.</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Brain Structures</h3>
+      <ul>
+        <li><strong>Medulla</strong> — breathing, heart rate (brainstem)</li>
+        <li><strong>Cerebellum</strong> — balance, coordination, fine motor</li>
+        <li><strong>Reticular formation</strong> — arousal, sleep/wake cycle</li>
+        <li><strong>Thalamus</strong> — sensory relay station (except smell)</li>
+        <li><strong>Hypothalamus</strong> — hunger, thirst, temp, sex drive, 4 F's</li>
+        <li><strong>Hippocampus</strong> — forms new explicit memories</li>
+        <li><strong>Amygdala</strong> — fear, aggression, emotional memory</li>
+        <li><strong>Corpus callosum</strong> — connects left & right hemispheres</li>
+        <li><strong>Cerebral cortex</strong> — higher-order thinking, 4 lobes</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>4 Lobes of the Cortex</h3>
+      <ul>
+        <li><strong>Frontal lobe</strong> — executive function, personality, motor cortex, Broca's area (speech production)</li>
+        <li><strong>Parietal lobe</strong> — somatosensory cortex, spatial processing, touch</li>
+        <li><strong>Occipital lobe</strong> — visual processing</li>
+        <li><strong>Temporal lobe</strong> — auditory processing, language comprehension, Wernicke's area</li>
+      </ul>
+      <div class="key-tip"><strong>Broca's</strong> = can't produce speech. <strong>Wernicke's</strong> = can't understand speech.</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Nervous System Divisions</h3>
+      <ul>
+        <li><strong>CNS</strong> — brain + spinal cord</li>
+        <li><strong>PNS</strong> — everything outside CNS</li>
+        <li><strong>Somatic NS</strong> — voluntary muscle control</li>
+        <li><strong>Autonomic NS</strong> — involuntary (heart, glands, organs)</li>
+        <li><strong>Sympathetic</strong> — fight-or-flight; speeds up, dilates pupils</li>
+        <li><strong>Parasympathetic</strong> — rest-and-digest; slows things down</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Sleep Stages</h3>
+      <ul>
+        <li><strong>Stage 1</strong> — light sleep, hypnagogic hallucinations, theta waves</li>
+        <li><strong>Stage 2</strong> — sleep spindles, K-complexes; harder to wake</li>
+        <li><strong>Stages 3–4</strong> — deep/slow-wave sleep, delta waves; physical restoration</li>
+        <li><strong>REM sleep</strong> — rapid eye movement, dreams, memory consolidation, brain very active, body paralyzed</li>
+        <li>REM increases as night goes on; first cycle has least REM</li>
+        <li><strong>REM rebound</strong> — more REM after sleep deprivation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Sensation Basics</h3>
+      <ul>
+        <li><strong>Absolute threshold</strong> — minimum stimulus to detect 50% of the time</li>
+        <li><strong>Difference threshold / JND</strong> — smallest detectable change between stimuli</li>
+        <li><strong>Weber's Law</strong> — JND is a constant proportion of stimulus intensity</li>
+        <li><strong>Signal detection theory</strong> — detecting stimuli depends on sensitivity + expectations/motivation</li>
+        <li><strong>Sensory adaptation</strong> — reduced sensitivity to constant stimuli</li>
+        <li><strong>Transduction</strong> — converting stimuli into neural signals</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Endocrine System</h3>
+      <ul>
+        <li><strong>Pituitary gland</strong> — "master gland"; controlled by hypothalamus</li>
+        <li><strong>Adrenal glands</strong> — secrete epinephrine & cortisol (stress response)</li>
+        <li><strong>Thyroid</strong> — regulates metabolism</li>
+        <li><strong>Hormones</strong> — slower than neurotransmitters; travel through bloodstream</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== UNIT 2 ===== -->
+<div id="unit2" class="unit-section u2">
+  <div class="unit-header">
+    <div class="unit-badge">2</div>
+    <div class="unit-title">
+      <h2>Cognition</h2>
+      <p>Memory, intelligence, thinking, language</p>
+    </div>
+    <div class="weight-badge">~17–21% of exam</div>
+  </div>
+
+  <div class="full-card">
+    <h3>Memory: Encoding → Storage → Retrieval</h3>
+    <div class="cards-grid" style="margin-top:0">
+      <div>
+        <p style="font-size:0.82rem;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em">Types of Memory</p>
+        <ul style="list-style:none;font-size:0.87rem;color:var(--muted)">
+          <li style="padding:3px 0"><strong style="color:var(--text)">Sensory memory</strong> — brief, large capacity (iconic = visual; echoic = auditory)</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Short-term (working) memory</strong> — ~7±2 items, ~20 sec without rehearsal</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Long-term memory</strong> — unlimited capacity, long duration</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Explicit (declarative)</strong> — facts (semantic) and events (episodic); requires conscious recall</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Implicit</strong> — skills/habits (procedural), classical conditioning; unconscious</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:0.82rem;font-weight:700;color:var(--accent2);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em">Encoding Strategies</p>
+        <ul style="list-style:none;font-size:0.87rem;color:var(--muted)">
+          <li style="padding:3px 0"><strong style="color:var(--text)">Automatic processing</strong> — time, space, frequency (no effort)</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Effortful processing</strong> — rehearsal, chunking, mnemonics</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Spacing effect</strong> — distributed practice beats cramming</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Serial position effect</strong> — primacy (first items) + recency (last items) best recalled</li>
+          <li style="padding:3px 0"><strong style="color:var(--text)">Levels of processing</strong> — deeper semantic encoding = better retention</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3><span class="dot"></span>Forgetting</h3>
+      <ul>
+        <li><strong>Encoding failure</strong> — info never stored properly</li>
+        <li><strong>Proactive interference</strong> — old memories interfere with new</li>
+        <li><strong>Retroactive interference</strong> — new memories interfere with old</li>
+        <li><strong>Motivated forgetting / repression</strong> — Freudian; blocking painful memories</li>
+        <li><strong>Ebbinghaus forgetting curve</strong> — most forgetting occurs soon after learning</li>
+        <li><strong>Tip-of-the-tongue</strong> — retrieval failure with a feeling of knowing</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Memory Biases & Errors</h3>
+      <ul>
+        <li><strong>Misinformation effect</strong> — post-event info alters memories (Loftus)</li>
+        <li><strong>Source amnesia</strong> — can't recall where you learned something</li>
+        <li><strong>Schemas</strong> — mental frameworks that distort memory to fit expectations</li>
+        <li><strong>Flashbulb memories</strong> — vivid, emotional memories (not necessarily more accurate)</li>
+        <li><strong>Déjà vu</strong> — feeling of having experienced something before</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Intelligence Theories</h3>
+      <ul>
+        <li><strong>Spearman's g</strong> — general intelligence factor underlying all cognitive abilities</li>
+        <li><strong>Gardner's Multiple Intelligences</strong> — 8+ types (linguistic, logical, musical, spatial, bodily-kinesthetic, interpersonal, intrapersonal, naturalistic)</li>
+        <li><strong>Sternberg's Triarchic</strong> — Analytical, Creative, Practical intelligence</li>
+        <li><strong>Fluid intelligence</strong> — reasoning, novel problem-solving (peaks early, declines with age)</li>
+        <li><strong>Crystallized intelligence</strong> — accumulated knowledge (increases with age)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Thinking & Problem Solving</h3>
+      <ul>
+        <li><strong>Algorithm</strong> — step-by-step rule that guarantees solution</li>
+        <li><strong>Heuristic</strong> — mental shortcut; fast but error-prone</li>
+        <li><strong>Availability heuristic</strong> — judge probability by how easily examples come to mind</li>
+        <li><strong>Representativeness heuristic</strong> — judge by resemblance to prototype</li>
+        <li><strong>Confirmation bias</strong> — seeking info that confirms existing beliefs</li>
+        <li><strong>Fixation</strong> — inability to see problem from new angle</li>
+        <li><strong>Framing effect</strong> — how a question is worded affects decision</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Language</h3>
+      <ul>
+        <li><strong>Phoneme</strong> — smallest unit of sound</li>
+        <li><strong>Morpheme</strong> — smallest unit of meaning</li>
+        <li><strong>Linguistic relativity (Whorf)</strong> — language shapes thought</li>
+        <li><strong>Critical period</strong> — language best acquired early in life (Chomsky's LAD)</li>
+        <li>Babbling → one-word → two-word → telegraphic speech → full language</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>IQ & Testing Concepts</h3>
+      <ul>
+        <li><strong>Reliability</strong> — consistent results</li>
+        <li><strong>Validity</strong> — measures what it claims to measure</li>
+        <li><strong>Standardization</strong> — uniform procedure + norms</li>
+        <li><strong>Flynn effect</strong> — IQ scores have risen over generations</li>
+        <li><strong>Stereotype threat</strong> — awareness of negative stereotypes impairs performance</li>
+        <li><strong>Normal distribution</strong> — IQ mean = 100, SD = 15</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== UNIT 3 ===== -->
+<div id="unit3" class="unit-section u3">
+  <div class="unit-header">
+    <div class="unit-badge">3</div>
+    <div class="unit-title">
+      <h2>Development and Learning</h2>
+      <p>Classical conditioning, operant conditioning, observational, lifespan</p>
+    </div>
+    <div class="weight-badge">~20–24% of exam</div>
+  </div>
+
+  <div class="full-card">
+    <h3>Classical Conditioning (Pavlov)</h3>
+    <div class="compare-row">
+      <div class="compare-cell"><div class="label" style="color:var(--unit3)">Before Conditioning</div>UCS → UCR<br><small style="color:var(--muted)">Food → Salivate (natural)</small></div>
+      <div class="compare-cell"><div class="label" style="color:var(--unit3)">Conditioning Phase</div>NS + UCS → UCR<br><small style="color:var(--muted)">Bell + Food → Salivate</small></div>
+    </div>
+    <div class="compare-row">
+      <div class="compare-cell"><div class="label" style="color:var(--unit3)">After Conditioning</div>CS → CR<br><small style="color:var(--muted)">Bell alone → Salivate</small></div>
+      <div class="compare-cell"><div class="label" style="color:var(--unit3)">Key Processes</div>
+        <small style="color:var(--muted)"><strong style="color:var(--text)">Extinction</strong> — CS repeatedly without UCS → CR weakens<br>
+        <strong style="color:var(--text)">Spontaneous recovery</strong> — extinguished CR returns after rest<br>
+        <strong style="color:var(--text)">Generalization</strong> — similar stimuli trigger CR<br>
+        <strong style="color:var(--text)">Discrimination</strong> — only respond to specific CS</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-card">
+    <h3>Operant Conditioning (Skinner)</h3>
+    <table>
+      <tr><th>Type</th><th>Add (+) or Remove (−)</th><th>Effect on Behavior</th><th>Example</th></tr>
+      <tr><td><strong>Positive Reinforcement</strong></td><td>Add desirable stimulus</td><td>Increases behavior</td><td>Treat for sitting</td></tr>
+      <tr><td><strong>Negative Reinforcement</strong></td><td>Remove unpleasant stimulus</td><td>Increases behavior</td><td>Taking painkillers removes pain</td></tr>
+      <tr><td><strong>Positive Punishment</strong></td><td>Add unpleasant stimulus</td><td>Decreases behavior</td><td>Spanking, speeding ticket</td></tr>
+      <tr><td><strong>Negative Punishment</strong></td><td>Remove desirable stimulus</td><td>Decreases behavior</td><td>Taking away phone</td></tr>
+    </table>
+    <div class="key-tip" style="margin-top:12px"><strong>Schedules of Reinforcement:</strong> Fixed ratio = most responses per reward (vending), Variable ratio = most resistant to extinction (gambling/slot machines), Fixed interval = scallop pattern, Variable interval = steady rate</div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3><span class="dot"></span>Observational Learning (Bandura)</h3>
+      <ul>
+        <li><strong>Modeling</strong> — learning by watching others</li>
+        <li><strong>Bobo doll experiment</strong> — kids imitated aggressive adult model</li>
+        <li>Requires: Attention → Retention → Reproduction → Motivation</li>
+        <li><strong>Self-efficacy</strong> — belief in one's ability to succeed</li>
+        <li><strong>Vicarious reinforcement</strong> — more likely to imitate rewarded models</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Cognitive Learning</h3>
+      <ul>
+        <li><strong>Latent learning</strong> — learning occurs without immediate reinforcement (Tolman's rats + cognitive maps)</li>
+        <li><strong>Insight learning</strong> — sudden "aha!" moment (Köhler's chimps)</li>
+        <li><strong>Learned helplessness</strong> — believing one has no control leads to passivity (Seligman)</li>
+        <li><strong>Intrinsic vs. extrinsic motivation</strong> — internal enjoyment vs. external reward</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Piaget's Stages (Cognitive)</h3>
+      <ul>
+        <li><strong>Sensorimotor (0–2)</strong> — object permanence; world through senses/action</li>
+        <li><strong>Preoperational (2–7)</strong> — symbolic thinking, egocentrism, no conservation</li>
+        <li><strong>Concrete Operational (7–11)</strong> — conservation, logical thinking about concrete objects</li>
+        <li><strong>Formal Operational (12+)</strong> — abstract reasoning, hypothetical thinking</li>
+        <li><strong>Assimilation</strong> — fitting new info into existing schemas</li>
+        <li><strong>Accommodation</strong> — changing schemas to fit new info</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Social Development</h3>
+      <ul>
+        <li><strong>Harlow's monkeys</strong> — contact comfort > food; attachment to cloth mother</li>
+        <li><strong>Ainsworth's Strange Situation</strong> — secure, anxious-ambivalent, avoidant attachment</li>
+        <li><strong>Secure attachment</strong> — explores freely, distressed when parent leaves, comforted on return</li>
+        <li><strong>Vygotsky</strong> — Zone of Proximal Development (ZPD) — what child can do with guidance; scaffolding</li>
+        <li><strong>Erikson's stages</strong> — 8 psychosocial crises across lifespan (e.g., trust vs. mistrust, identity vs. role confusion)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Adolescent & Adult Development</h3>
+      <ul>
+        <li><strong>Puberty</strong> — physical maturation; begins earlier for girls</li>
+        <li><strong>Kohlberg's moral development</strong> — Preconventional → Conventional → Postconventional</li>
+        <li><strong>Identity vs. role confusion</strong> — Erikson's adolescent stage</li>
+        <li><strong>Emerging adulthood</strong> — Arnett's concept; age 18–25 period of identity exploration</li>
+        <li><strong>Menopause</strong> — end of female reproductive period; associated changes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== UNIT 4 ===== -->
+<div id="unit4" class="unit-section u4">
+  <div class="unit-header">
+    <div class="unit-badge">4</div>
+    <div class="unit-title">
+      <h2>Social Psychology & Personality</h2>
+      <p>Conformity, attribution, group behavior, personality theories</p>
+    </div>
+    <div class="weight-badge">~20–24% of exam</div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3><span class="dot"></span>Attribution Theory</h3>
+      <ul>
+        <li><strong>Attribution</strong> — explaining behavior by identifying causes</li>
+        <li><strong>Dispositional (internal)</strong> — blame/credit person's character</li>
+        <li><strong>Situational (external)</strong> — blame/credit circumstances</li>
+        <li><strong>Fundamental attribution error (FAE)</strong> — overemphasize dispositional, underestimate situational causes for others' behavior</li>
+        <li><strong>Self-serving bias</strong> — attribute own successes to self, failures to situation</li>
+        <li><strong>Actor-observer effect</strong> — attribute own behavior situationally, others' dispositionally</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Attitudes & Persuasion</h3>
+      <ul>
+        <li><strong>Cognitive dissonance</strong> — tension when actions conflict with beliefs; we change beliefs to reduce it (Festinger)</li>
+        <li><strong>Foot-in-the-door</strong> — small request first, then larger (compliance)</li>
+        <li><strong>Door-in-the-face</strong> — large request first (refused), then smaller target request</li>
+        <li><strong>Central route persuasion</strong> — logic and evidence; lasting attitude change</li>
+        <li><strong>Peripheral route</strong> — superficial cues (attractiveness, emotion); temporary change</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Conformity & Obedience</h3>
+      <ul>
+        <li><strong>Asch (conformity)</strong> — people give wrong answers to match group; ~75% conformed at least once</li>
+        <li><strong>Milgram (obedience)</strong> — ~65% of participants administered maximum "shock" when ordered by authority</li>
+        <li><strong>Normative influence</strong> — conforming to fit in / be liked</li>
+        <li><strong>Informational influence</strong> — conforming because others seem to know better</li>
+        <li><strong>Zimbardo's Stanford Prison Study</strong> — people conform to assigned roles (ethics: deception, harm)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Group Behavior</h3>
+      <ul>
+        <li><strong>Social facilitation</strong> — presence of others improves simple tasks, impairs complex ones</li>
+        <li><strong>Social loafing</strong> — less effort in groups</li>
+        <li><strong>Deindividuation</strong> — loss of self-awareness in groups → impulsive behavior</li>
+        <li><strong>Groupthink</strong> — desire for harmony suppresses dissent; poor decisions</li>
+        <li><strong>Group polarization</strong> — group discussion strengthens members' existing opinions</li>
+        <li><strong>Bystander effect</strong> — less likely to help when others are present (diffusion of responsibility)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Prejudice & Discrimination</h3>
+      <ul>
+        <li><strong>Stereotype</strong> — generalized belief about a group</li>
+        <li><strong>Prejudice</strong> — unjustified attitude (affective)</li>
+        <li><strong>Discrimination</strong> — unjustified action based on prejudice</li>
+        <li><strong>In-group vs. out-group</strong> — favoritism for own group; hostility toward others</li>
+        <li><strong>Scapegoating</strong> — blaming an out-group for one's problems</li>
+        <li><strong>Contact hypothesis</strong> — equal-status contact reduces prejudice</li>
+        <li><strong>Just-world phenomenon</strong> — belief that people get what they deserve</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Psychodynamic Personality (Freud)</h3>
+      <ul>
+        <li><strong>Id</strong> — pleasure principle, unconscious drives</li>
+        <li><strong>Ego</strong> — reality principle, mediates id & superego</li>
+        <li><strong>Superego</strong> — morality, internalized rules</li>
+        <li><strong>Defense mechanisms</strong> — repression, projection, rationalization, displacement, regression, reaction formation, sublimation</li>
+        <li>Psychosexual stages: oral → anal → phallic (Oedipus/Electra) → latency → genital</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Humanistic Personality (Maslow, Rogers)</h3>
+      <ul>
+        <li><strong>Maslow's hierarchy</strong> — physiological → safety → love/belonging → esteem → self-actualization</li>
+        <li><strong>Self-actualization</strong> — fulfilling one's full potential</li>
+        <li><strong>Carl Rogers</strong> — unconditional positive regard, self-concept, congruence</li>
+        <li><strong>Congruence</strong> — match between ideal self and actual self = healthy personality</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Trait Theories & Social-Cognitive</h3>
+      <ul>
+        <li><strong>Big Five (OCEAN)</strong> — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism</li>
+        <li><strong>Bandura's social-cognitive</strong> — behavior influenced by cognition, environment, and behavior (reciprocal determinism)</li>
+        <li><strong>Locus of control</strong> — internal (control own fate) vs. external (luck/fate controls)</li>
+        <li><strong>Projective tests</strong> — Rorschach (inkblots), TAT; reveal unconscious (low reliability)</li>
+        <li><strong>Objective tests</strong> — MMPI; standardized self-report</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Aggression & Prosocial Behavior</h3>
+      <ul>
+        <li><strong>Frustration-aggression hypothesis</strong> — frustrated goals trigger aggression</li>
+        <li><strong>Catharsis</strong> — venting reduces aggression (largely unsupported by research)</li>
+        <li><strong>Altruism</strong> — selfless helping behavior</li>
+        <li><strong>Reciprocity norm</strong> — feel obligated to help those who've helped us</li>
+        <li><strong>Social exchange theory</strong> — weigh costs/benefits of helping</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== UNIT 5 ===== -->
+<div id="unit5" class="unit-section u5">
+  <div class="unit-header">
+    <div class="unit-badge">5</div>
+    <div class="unit-title">
+      <h2>Mental and Physical Health</h2>
+      <p>Psychological disorders, treatment, stress, positive psychology</p>
+    </div>
+    <div class="weight-badge">~17–21% of exam</div>
+  </div>
+
+  <div class="full-card">
+    <h3>Classifying Disorders: The DSM-5</h3>
+    <p style="font-size:0.87rem;color:var(--muted);margin-bottom:10px">The Diagnostic and Statistical Manual of Mental Disorders defines criteria for diagnosing psychological disorders. The <strong style="color:var(--text)">biopsychosocial model</strong> holds that disorders arise from biological (genetics, neurotransmitters), psychological (learning, cognition), and social (culture, stress, relationships) factors.</p>
+    <div class="key-tip"><strong>Criteria for a disorder:</strong> Distress, Dysfunction, Deviance (unusual), and Danger — the "4 D's"</div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <h3><span class="dot"></span>Anxiety Disorders</h3>
+      <ul>
+        <li><strong>Generalized Anxiety Disorder (GAD)</strong> — chronic, uncontrollable worry about many things</li>
+        <li><strong>Panic Disorder</strong> — recurring unexpected panic attacks; fear of having them</li>
+        <li><strong>Phobia</strong> — intense irrational fear of specific object/situation</li>
+        <li><strong>Social Anxiety Disorder</strong> — fear of social situations, being judged</li>
+        <li><strong>OCD</strong> — obsessions (intrusive thoughts) + compulsions (repetitive behaviors to reduce anxiety)</li>
+        <li><strong>PTSD</strong> — flashbacks, hyperarousal, avoidance after traumatic event</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Mood Disorders</h3>
+      <ul>
+        <li><strong>Major Depressive Disorder</strong> — persistent low mood, hopelessness, loss of interest ≥2 weeks</li>
+        <li><strong>Persistent depressive disorder (dysthymia)</strong> — chronic mild depression ≥2 years</li>
+        <li><strong>Bipolar I</strong> — full manic episodes + depressive episodes</li>
+        <li><strong>Bipolar II</strong> — hypomanic episodes + severe depression</li>
+        <li><strong>Mania</strong> — elevated mood, decreased need for sleep, impulsivity, grandiosity</li>
+        <li>Linked to low serotonin/norepinephrine (depression), dopamine dysregulation (bipolar)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Schizophrenia Spectrum</h3>
+      <ul>
+        <li><strong>Positive symptoms</strong> — added behaviors: hallucinations, delusions, disorganized speech</li>
+        <li><strong>Negative symptoms</strong> — removed behaviors: flat affect, alogia (reduced speech), avolition (no motivation)</li>
+        <li><strong>Hallucinations</strong> — perceiving without stimulus (most often auditory)</li>
+        <li><strong>Delusions</strong> — fixed false beliefs (persecution, grandeur)</li>
+        <li>Dopamine hypothesis — excess dopamine activity linked to positive symptoms</li>
+        <li>Enlarged ventricles and reduced prefrontal activity noted in brain scans</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Dissociative & Personality Disorders</h3>
+      <ul>
+        <li><strong>Dissociative Identity Disorder</strong> — two or more distinct personality states</li>
+        <li><strong>Dissociative amnesia</strong> — inability to recall personal info due to psychological trauma</li>
+        <li><strong>Antisocial Personality Disorder</strong> — disregard for others' rights, no remorse (sociopathy)</li>
+        <li><strong>Borderline Personality Disorder</strong> — unstable identity, mood, and relationships; impulsivity</li>
+        <li><strong>Narcissistic Personality Disorder</strong> — grandiosity, lack of empathy</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Neurodevelopmental Disorders</h3>
+      <ul>
+        <li><strong>ADHD</strong> — inattention and/or hyperactivity-impulsivity; treated with stimulants</li>
+        <li><strong>Autism Spectrum Disorder</strong> — social/communication difficulties, restricted behaviors/interests</li>
+        <li><strong>Intellectual Disability</strong> — significant limits in intellectual functioning + adaptive behavior</li>
+        <li><strong>Specific Learning Disorder</strong> — dyslexia (reading), dyscalculia (math)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Biomedical Treatments</h3>
+      <ul>
+        <li><strong>Antidepressants (SSRIs)</strong> — increase serotonin (e.g., Prozac, Zoloft); used for depression, anxiety, OCD</li>
+        <li><strong>Antipsychotics</strong> — block dopamine; treat schizophrenia</li>
+        <li><strong>Anti-anxiety (benzodiazepines)</strong> — enhance GABA; short-term (habit-forming)</li>
+        <li><strong>Mood stabilizers</strong> — lithium for bipolar disorder</li>
+        <li><strong>ECT (Electroconvulsive therapy)</strong> — last resort for severe depression; effective but causes memory loss</li>
+        <li><strong>Psychosurgery</strong> — lobotomy (historical); deep brain stimulation (modern)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Psychological Therapies</h3>
+      <ul>
+        <li><strong>Psychoanalysis</strong> — free association, dream analysis, transference; uncover unconscious conflicts</li>
+        <li><strong>Humanistic (person-centered)</strong> — Rogers; unconditional positive regard, empathy, genuineness</li>
+        <li><strong>Cognitive therapy (Beck)</strong> — challenge negative automatic thoughts and cognitive distortions</li>
+        <li><strong>CBT</strong> — most evidence-based; combines cognitive + behavioral techniques</li>
+        <li><strong>Behavior therapies</strong> — systematic desensitization (phobias), token economy, aversion therapy</li>
+        <li><strong>EMDR</strong> — eye movement desensitization for PTSD</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="dot"></span>Stress & Health</h3>
+      <ul>
+        <li><strong>General Adaptation Syndrome (Selye)</strong> — Alarm → Resistance → Exhaustion</li>
+        <li><strong>HPA axis</strong> — hypothalamus → pituitary → adrenal glands → cortisol release</li>
+        <li><strong>Type A personality</strong> — competitive, impatient, hostile; higher heart disease risk</li>
+        <li><strong>Problem-focused coping</strong> — address the stressor directly</li>
+        <li><strong>Emotion-focused coping</strong> — manage emotional response to stressor</li>
+        <li><strong>Social support</strong> — strong predictor of health outcomes</li>
+        <li><strong>Positive psychology (Seligman)</strong> — focus on strengths, well-being, meaning (PERMA model)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FRQ TIPS ===== -->
+<div id="frq" class="section-divider"><span>Free Response</span></div>
+
+<div class="frq-box">
+  <h3>FRQ Strategy — How to Get Full Points</h3>
+  <div class="two-col" style="margin-top:8px">
+    <div>
+      <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em">Format Rules</p>
+      <ul style="list-style:none;font-size:0.87rem;color:var(--muted)">
+        <li style="padding:3px 0">• Each part (A, B, C...) = separate paragraph</li>
+        <li style="padding:3px 0">• <strong style="color:var(--text)">Define the term</strong> first, then apply to the scenario</li>
+        <li style="padding:3px 0">• Be specific — name the concept, explain how it applies</li>
+        <li style="padding:3px 0">• Don't just list; write in complete sentences</li>
+        <li style="padding:3px 0">• Underline or bold key terms (helps graders)</li>
+        <li style="padding:3px 0">• There are 2 FRQs — 25 min each is a good pace</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:0.82rem;font-weight:700;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em">Common FRQ Topics</p>
+      <ul style="list-style:none;font-size:0.87rem;color:var(--muted)">
+        <li style="padding:3px 0">• Classical vs. operant conditioning scenarios</li>
+        <li style="padding:3px 0">• Research methods (IV, DV, confounds, bias)</li>
+        <li style="padding:3px 0">• Applying a disorder to a case study</li>
+        <li style="padding:3px 0">• Neurotransmitter + drug effects</li>
+        <li style="padding:3px 0">• Explaining behavior using multiple units</li>
+        <li style="padding:3px 0">• Piaget / Erikson development scenarios</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="full-card">
+  <h3>Research Methods Quick Reference (always tested)</h3>
+  <table>
+    <tr><th>Concept</th><th>Definition</th><th>Key Distinction</th></tr>
+    <tr><td><strong>Independent Variable (IV)</strong></td><td>What the researcher manipulates</td><td>The cause</td></tr>
+    <tr><td><strong>Dependent Variable (DV)</strong></td><td>What is measured</td><td>The effect</td></tr>
+    <tr><td><strong>Control group</strong></td><td>No treatment; baseline for comparison</td><td>Not the experimental group</td></tr>
+    <tr><td><strong>Random assignment</strong></td><td>Randomly assign participants to groups</td><td>Controls for confounds; allows causation</td></tr>
+    <tr><td><strong>Random sampling</strong></td><td>Every member of population has equal chance</td><td>Allows generalization</td></tr>
+    <tr><td><strong>Double-blind</strong></td><td>Neither participants nor researchers know who got treatment</td><td>Controls placebo + experimenter bias</td></tr>
+    <tr><td><strong>Correlation</strong></td><td>Relationship between two variables</td><td>Does NOT imply causation</td></tr>
+    <tr><td><strong>Experiment</strong></td><td>Can establish cause-and-effect</td><td>Requires manipulation of IV</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  <p>AP Psychology Cram Notes — 2026 Exam Edition</p>
+  <p style="margin-top:4px">Best of luck — you've got this. Study the high-weight units first: Unit 3 (Dev & Learning) and Unit 4 (Social & Personality) are worth nearly half the exam.</p>
+</div>
+
+</div>
+</body>
+</html>
